@@ -44,3 +44,11 @@ osuus_yli_30_000_eur = kokonaisbruttosumma >= 30000 ? (kokonaisbruttosumma - 300
 
 puts "Osuus yli 30 000 EUR, veroprosentti 43: #{osuus_yli_30_000_eur}"
 
+maksettava_vero_alle_30_000_eur_osuudesta = osuus_alle_30_000_eur * 0.30
+
+puts "Maksettava vero alle 30 000 EUR osuudesta, veroprosentti 30: #{maksettava_vero_alle_30_000_eur_osuudesta}"
+
+maksettava_vero_yli_30_000_eur_osuudesta = osuus_yli_30_000_eur * 0.34
+
+puts "Maksettava vero yli 30 000 EUR osuudesta, veroprosentti 34: #{maksettava_vero_yli_30_000_eur_osuudesta}"
+
