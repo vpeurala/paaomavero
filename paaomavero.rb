@@ -38,11 +38,11 @@ puts "Kokonaisbruttotulo: #{kokonaisbruttotulo}"
 
 osuus_alle_30_000_eur = kokonaisbruttotulo >= 30000 ? 30000 : kokonaisbruttotulo
 
-puts "Osuus alle 30 000 EUR, veroprosentti 30: #{osuus_alle_30_000_eur}"
+puts "Osuus alle 30 000 EUR: #{osuus_alle_30_000_eur}"
 
 osuus_yli_30_000_eur = kokonaisbruttotulo >= 30000 ? (kokonaisbruttotulo - 30000) : 0
 
-puts "Osuus yli 30 000 EUR, veroprosentti 43: #{osuus_yli_30_000_eur}"
+puts "Osuus yli 30 000 EUR: #{osuus_yli_30_000_eur}"
 
 maksettava_vero_alle_30_000_eur_osuudesta = osuus_alle_30_000_eur * 0.30
 
