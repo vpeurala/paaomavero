@@ -25,15 +25,22 @@ elsif ARGV.length > 1 then
         puts
         puts usage
         exit 2
-end
-
-kokonaisbruttosumma = ARGV[0].to_i
-
-if kokonaisbruttosumma.to_s != ARGV[0] then
+elsif /^\d*(?:\.\d+)?/ !~ ARGV[0]
 	puts "Parametri \"bruttotulo\" ei ole validi numero: #{ARGV[0]}."
 	puts
 	puts usage
 	exit 3
 end
 
+kokonaisbruttosumma = ARGV[0].to_f
+
 puts "Kokonaisbruttosumma: #{kokonaisbruttosumma}"
+
+osuus_alle_30_000_eur = kokonaisbruttosumma >= 30000 ? 30000 : kokonaisbruttosumma
+
+puts "Osuus alle 30 000 EUR, veroprosentti 30: #{osuus_alle_30_000_eur}"
+
+osuus_yli_30_000_eur = kokonaisbruttosumma >= 30000 ? (kokonaisbruttosumma - 30000) : 0
+
+puts "Osuus yli 30 000 EUR, veroprosentti 43: #{osuus_yli_30_000_eur}"
+
