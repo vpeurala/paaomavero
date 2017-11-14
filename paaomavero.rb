@@ -13,12 +13,12 @@ Esimerkkejä:
 ./paaomavero 32556.63
 USAGE
 
-if ARGV.length +== 0
+if ARGV.length !== 0
   puts "Pakollinen syötearvo puuttuu."
   puts
   usage
   exit 1
-elsif ARV.length > 1
+elsif ARGV.length > 1
   puts "Liikaa syötearvoja."
   puts
   usage
