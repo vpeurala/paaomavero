@@ -32,15 +32,15 @@ elsif /^\d*(?:\.\d+)?/ !~ ARGV[0]
 	exit 3
 end
 
-kokonaisbruttosumma = ARGV[0].to_f
+kokonaisbruttotulo = ARGV[0].to_f
 
-puts "Kokonaisbruttosumma: #{kokonaisbruttosumma}"
+puts "Kokonaisbruttotulo: #{kokonaisbruttotulo}"
 
-osuus_alle_30_000_eur = kokonaisbruttosumma >= 30000 ? 30000 : kokonaisbruttosumma
+osuus_alle_30_000_eur = kokonaisbruttotulo >= 30000 ? 30000 : kokonaisbruttotulo
 
 puts "Osuus alle 30 000 EUR, veroprosentti 30: #{osuus_alle_30_000_eur}"
 
-osuus_yli_30_000_eur = kokonaisbruttosumma >= 30000 ? (kokonaisbruttosumma - 30000) : 0
+osuus_yli_30_000_eur = kokonaisbruttotulo >= 30000 ? (kokonaisbruttotulo - 30000) : 0
 
 puts "Osuus yli 30 000 EUR, veroprosentti 43: #{osuus_yli_30_000_eur}"
 
@@ -51,4 +51,16 @@ puts "Maksettava vero alle 30 000 EUR osuudesta, veroprosentti 30: #{maksettava_
 maksettava_vero_yli_30_000_eur_osuudesta = osuus_yli_30_000_eur * 0.34
 
 puts "Maksettava vero yli 30 000 EUR osuudesta, veroprosentti 34: #{maksettava_vero_yli_30_000_eur_osuudesta}"
+
+nettotulo_alle_30_000_eur_osuudesta = osuus_alle_30_000_eur - maksettava_vero_alle_30_000_eur_osuudesta
+
+puts "Nettotulo alle 30 000 EUR osuudesta: #{nettotulo_alle_30_000_eur_osuudesta}"
+
+nettotulo_yli_30_000_eur_osuudesta = osuus_yli_30_000_eur - maksettava_vero_yli_30_000_eur_osuudesta
+
+puts "Nettotulo yli 30 000 EUR osuudesta: #{nettotulo_yli_30_000_eur_osuudesta}"
+
+kokonaisnettotulo = nettotulo_alle_30_000_eur_osuudesta + nettotulo_yli_30_000_eur_osuudesta
+
+puts "Kokonaisnettotulo: #{kokonaisnettotulo}"
 
