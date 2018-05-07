@@ -64,3 +64,7 @@ kokonaisnettotulo = nettotulo_alle_30_000_eur_osuudesta + nettotulo_yli_30_000_e
 
 puts "Kokonaisnettotulo: #{kokonaisnettotulo}"
 
+maksettava_vero_yhteensa = maksettava_vero_alle_30_000_eur_osuudesta + maksettava_vero_yli_30_000_eur_osuudesta
+
+puts "Maksettavan veron määrä yhteensä: #{maksettava_vero_yhteensa}"
+
